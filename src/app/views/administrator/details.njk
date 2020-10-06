@@ -1,0 +1,65 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{recipes.title}} - Foodfy </title>
+{%endblock%}
+
+{% block content %}       
+        <div class="recipe-details">
+            <div class="top-details">
+                <h2>Receita: {{recipes.title_recipe}}</h2>
+                <a href="/admin/recipes/{{recipes.id}}/edit">Editar Receita</a>
+            </div>
+
+            <div class="details-image">
+                <img src="{{recipes.image_url}}" alt="Imagem de {{recipes.title_recipe}}">
+            </div>
+            
+            <div class="infos-details">
+                <h4>{{recipes.title_recipe}}</h4>
+                <p class="autor">por {{recipes.author_recipe}}</p>
+            </div>
+        
+
+            <div class="instructions">
+                <div class="ingredients">
+                    <div class="title">
+                        <h4>Ingredientes</h4>
+                        <button>ESCONDER</button>
+                    </div>
+                    <div class="hide">
+                        {% for ingredient in recipes.ingredients %}                        
+                            <ul>
+                                <li>-     {{ingredient}}</li>
+                            </ul>                            
+                        {% endfor %}  
+                    </div>              
+                </div>
+
+                <div class="preparation">
+                    <div class="title">
+                        <h4>Modo de preparo</h4>
+                        <button>ESCONDER</button>
+                    </div>
+                    <div class="hide">
+                        {% for item in recipes.step %}
+                            <ul>
+                                <li>-{{item}}</li>
+                            </ul>                                              
+                        {% endfor %}  
+                    </div>
+                </div>
+
+                <div class="information">
+                    <div class="title">
+                        <h4>Informações adicionais</h4>
+                        <button>ESCONDER</button>                                  
+                    </div> 
+                    <p class= "hide">{{recipes.addinfo}}</p>
+                </div>
+            </div>
+
+        </div>
+    
+    <script src="/script.js"> </script>
+{% endblock%}
