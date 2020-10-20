@@ -1,0 +1,57 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{recipes.title}} - Foodfy </title>
+{%endblock%}
+
+{% block content %}       
+        <div class="chefs-details">
+            <div class="top-details">
+                <h2>Chef: Julia kinoto</h2>
+                <a href="/admin/recipes/{{recipes.id}}/edit">Editar Chef</a>
+            </div>
+
+            <div class="details-chefs-image">
+                <img src="https://avatars2.githubusercontent.com/u/6643122?s=460&u=1e9e1f04b76fb5374e6a041f5e41dce83f3b5d92&v=4" alt="Imagem de {{recipes.title_recipe}}">
+            </div>
+            
+            <div class="infos-details">
+                <h4>Julía Kinoto</h4>
+                <p class="autor">4 receitas</p>
+            </div>
+
+            <div class="recipe-container">
+                <h2>Receitas</h2>
+
+                <div class="chefs-recipes">
+                    
+                    <div class="recipe">
+                        <div class="recipe-image">
+                            <img src="/doce.png" alt="Imagem {{recipe.title_recipe}}">
+                        </div>
+                        <div class="infos">
+                            <h4>Alguma Coisa Alguma coisa</h4>                            
+                            <p class="autor">por Julia kinoto</p>
+                            <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe">
+                        <div class="recipe-image">
+                            <img src="/doce.png" alt="Imagem {{recipe.title_recipe}}">
+                        </div>
+                        <div class="infos">
+                            <h4>Alguma Coisa Alguma coisa</h4>                            
+                            <p class="autor">por Julia kinoto</p>
+                            <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+
+            </div>
+    
+    <script src="/script.js"> </script>
+{% endblock%}

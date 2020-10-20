@@ -16,6 +16,20 @@ for (let i = 0; i < buttons.length; i++) {
     })    
 }
 
+const currentPage = location.pathname
+const menuLinks = document.querySelectorAll('header .menu-links a ')
+
+for(link of menuLinks){
+    if(currentPage.includes(link.getAttribute('href'))){
+        link.classList.add('active')
+    }
+}
+
+
+
+
+
+
 
 
 function addIngredient (){
@@ -57,6 +71,9 @@ function addModeOfPrepare (){
 document
     .querySelector('.add-ModeOfPrepare')
     .addEventListener('click',addModeOfPrepare)
+
+
+
 
 
 

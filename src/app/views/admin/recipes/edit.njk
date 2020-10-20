@@ -1,0 +1,35 @@
+{% extends "layout.njk" %}
+
+{%block head%}
+    <title>Sobre - Foodfy</title>
+    {%endblock%}
+
+    {% block content %}
+
+        <form  method="post" action="/admin/recipes?_method=PUT">
+             <div class="top-page-create">
+                <h2>Editando receita</h2>
+                <button type="submit">Salvar receita</button>
+            </div>
+
+            {% include "admin/recipes/fields.njk"%}
+
+            <input 
+            type="hidden"
+            name="id"
+            value="{{recipes.id}}">
+
+        </form>
+
+        <form  method="post" action="/admin/recipes?_method=DELETE">
+            <button type="submit" class="top-page-create">Deletar</button>
+            <input 
+            type="hidden"
+            name="id"
+            value="{{recipes.id}}">
+            
+
+        </form>
+
+
+    {% endblock %}

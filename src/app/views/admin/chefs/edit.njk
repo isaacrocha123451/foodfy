@@ -12,7 +12,7 @@
                 <button type="submit">Salvar receita</button>
             </div>
 
-            {% include "administrator/fields.njk"%}
+            {% include "admin/chefs/fields.njk"%}
 
             <input 
             type="hidden"
@@ -22,7 +22,7 @@
         </form>
 
         <form  method="post" action="/admin/recipes?_method=DELETE">
-            <button type="submit">Deletar</button>
+            <button type="submit" class="top-page-create">Deletar</button>
             <input 
             type="hidden"
             name="id"

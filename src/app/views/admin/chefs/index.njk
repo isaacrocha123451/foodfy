@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+
+
+{%block head%}
+    <title>Receitas - Foodfy</title>
+{%endblock%}
+
+{% block content %} 
+
+
+       
+
+        <div class="top-page-create">
+            <h2>Gerenciando chefs</h2>
+            <a href="/admin/chefs/create" class="button">Novo chef</a>
+        </div>
+    
+       <div class="chefs">
+           
+                <div class="chef">
+                    <div class="chef-image">
+                        <img src="https://avatars2.githubusercontent.com/u/6643122?s=460&u=1e9e1f04b76fb5374e6a041f5e41dce83f3b5d92&v=4" alt="Imagem {{recipe.title_recipe}}">
+                    </div>
+                    <div class="infos">
+                        <h4>Julia kinoto</h4>                            
+                        <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                    </div>
+                </div>
+                
+
+            
+        </div>       
+    
+
+    <script src="/script.js"></script>
+
+{% endblock %}
